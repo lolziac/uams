@@ -1,0 +1,24 @@
+<% @page_title = "Categories List" %>
+
+<div class="category list">
+  <h1 class="pagetitle">Categories</h1>
+  <%= link_to("Add New Category", {:action => 'new'}, :class => 'action new') %><br />
+  
+  <div><%= pluralize(@categories.size, 'category') %> found</div><br />
+  
+  <% @categories.each do |category| %>
+	<ul class="categ-type1">
+		<li>
+			<div class="categ-img-type1" >
+			<h2><%= category.name %></h2>
+			<a href="#"><img src="<%= category.photo.url(:small) %>"></a>
+			</div>					
+			<div>
+				<%= link_to("Show", {:action => 'show', :id => category.id}, :class => 'action show') %> | 
+				<%= link_to("Edit", {:action => 'edit', :id => category.id}, :class => 'action edit') %> | 
+				<%= link_to("Delete", {:action => 'delete', :id => category.id}, :class => 'action delete') %>
+			</div>
+		</li>
+	</ul>
+  <% end %>
+</div>

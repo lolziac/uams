@@ -1,0 +1,59 @@
+<% @page_title = "Products List" %>
+
+<div class="product list">
+  <h2>Products</h2>
+  
+  <%= link_to("Add New Product", {:action => 'new'}, :class => 'action new') %>
+  <div><%= pluralize(@products.size, 'product') %> found</div>
+  <table class="listing" summary="Product list">
+    <tr class="header">
+      <th>Category</th>
+      <th>Product</th>
+	  <th>Brand</th>
+      <th>Name</th>
+	  <th>Model Nr</th>
+      <th>Status</th>
+	  <th>Actions</th>
+    </tr>
+    <% @products.each do |product| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= product.category_id %></td>
+      <td><%= product.id %></td>
+      <td><%= product.brand %></td>
+      <td><%= product.name %></td>
+	  <td><%= product.modelnr %></td>
+	  <td><%= product.status %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => product.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => product.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => product.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  
+<% columns = [{:type => 'html', :class => "first"}, {:type => 'html'}, {:type => 'html'}, {:type => nil, :class => "last"}] %>
+<%= datatable(columns, {:sort_by => "[0, 'desc']", :processing => image_tag("spinner.gif") }).html_safe %>
+
+<table id='users' class='datatable'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Account Level</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @products.each do |product| -%>
+      <tr id="lidhje skom">
+        <td><%= product.category_id %></td>
+        <td><%= product.brand %></td>
+        <td><%= product.name %></td>
+        <td><%= link_to("Show", {:action => 'show', :id => product.id}, :class => 'action show') %></td>
+      </tr>
+    <%- end -%>
+  </tbody>
+</table>
+  
+</div>
