@@ -1,0 +1,37 @@
+<% @page_title = 'Create Admin User' %>
+
+<div class="user new">
+    <h2 class="pagetitle">Create Admin User</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+    </div>
+    <br/>
+    <hr />
+    <div id="content-full">
+    <div id="contsmallleft">
+            <hr/>
+            <div id='conthold' align="center">
+
+                <br/>
+                <h2 >New User</h2>
+                <img  src="http://wiseheartdesign.com/page_attachments/0000/0062/default-avatar.png">
+                <hr/>
+            </div>  
+    </div>
+        <div id="contleft">
+          <%= form_for(:admin_user, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>Use the following form to Add New User.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Create Admin User" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

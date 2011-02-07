@@ -1,0 +1,21 @@
+<% @page_title = "Admin Menu" %>
+
+<h2>Admin Menu</h2>
+<div class="identity">Logged in as: <%= session[:username] %></div>
+<div id="topnavigation">
+    <ul id="topnav">
+        <li>
+            <a href="http://localhost:3000">Home</a>
+        </li>
+        <li><%= link_to("Categories", :controller => 'categories') %></li>
+        <li><%= link_to("Products", :controller => 'products') %></li>
+        <li><%= link_to("Suppliers", :controller => 'suppliers') %></li>
+        <li><%= link_to("Workers", :controller => 'workers') %></li>
+        <li><%= link_to("Cargo", :controller => 'cargo') %></li>
+        <li><%= link_to("Admin Users", :controller => 'admin_users') %></li>
+        <li><%= link_to("Logout", :action => 'logout') %></li>
+    </ul>
+    <form  method="get" action="" id="searchform">
+    <div><input type="text" class="inputbox" value="search" onblur="if (this.value == ''){this.value = 'search'; }" onfocus="if (this.value == 'search') {this.value = ''; }"/></div>
+    </form>
+</div>
