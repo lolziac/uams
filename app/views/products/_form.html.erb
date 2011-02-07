@@ -1,52 +1,38 @@
+<hr/>
 <%= error_messages_for(@product) %>
 
-<table summary="Product form fields">
-   <tr>
-    <th><%= f.label(:category) %></th>
-    <td><%= f.select(:category_id, Category.all.collect {|s| [s.name, s.id]}) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:brand) %></th>
-    <td><%= f.text_field(:brand) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:name) %></th>
-    <td><%= f.text_field(:name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:modelnr, "Model Number") %></th>
-    <td><%= f.text_field(:modelnr) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:serialnr, "Serial Number") %></th>
-    <td><%= f.text_field(:serialnr) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:supplier) %></th>
-	<td><%= f.select(:supplier_id, Supplier.all.collect {|s| [s.company_name, s.id]}) %></td>
-  </tr>
-  <tr>
-	<th><%= f.label(:photo) %></th>
-	<td><%= f.file_field :photo %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:price) %></th>
-    <td><%= f.text_field(:price) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:date_purchased, "Date Purchased") %></th>
-    <td><%= f.date_select(:date_purchased, :order => [:month, :day, :year]) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:info) %></th>
-    <td><%= f.text_area(:info, :size => '40x10') %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:status) %></th>
-    <td>
-		<%= f.radio_button(:status, 'Available') %> Available
-		<%= f.radio_button(:status, 'In Use') %> In Use
-		<%= f.radio_button(:status, 'Unavailable') %> Unavailable
-	</td>
-  </tr>
-</table>  
+<%= f.label(:category) %>
+<%= f.select(:category_id, Category.all.collect {|s| [s.name, s.id]}) %><br/>
+
+<%= f.label(:brand) %>
+<%= f.text_field(:brand) %><br/>
+
+<%= f.label(:name) %>
+<%= f.text_field(:name) %><br/>
+
+<%= f.label(:modelnr, "Model Number") %>
+<%= f.text_field(:modelnr) %><br/>
+
+<%= f.label(:serialnr, "Serial Number") %>
+<%= f.text_field(:serialnr) %><br/>
+
+<%= f.label(:supplier) %>
+<%= f.select(:supplier_id, Supplier.all.collect {|s| [s.company_name, s.id]}) %><br/>
+
+<%= f.label(:photo) %>
+<%= f.file_field :photo %><br/>
+
+<%= f.label(:price) %>
+<%= f.text_field(:price) %><br/>
+
+<%= f.label(:date_purchased, "Date Purchased") %>
+<%= f.date_select(:date_purchased, :order => [:month, :day, :year]) %><br/><br/>
+
+<%= f.label(:info) %>
+<%= f.text_area(:info, :size => '40x10') %><br/><br/>
+
+<%= f.label(:status) %>
+        <%= f.radio_button(:status, 'Available') %> Available
+        <%= f.radio_button(:status, 'In Use') %> In Use
+        <%= f.radio_button(:status, 'Unavailable') %> Unavailable
+        <br/><br/>

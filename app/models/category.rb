@@ -5,7 +5,8 @@ class Category < ActiveRecord::Base
 	validates_presence_of :name
 	
 	scope :visible, where(:visible => true) 
-	scope :invisible, where(:visible => false) 
+	scope :invisible, where(:visible => false)
+	scope :sorted, order('categories.position ASC') 
 	scope :search, lambda {|query| where(["name LIKE ?", "%#{query}%"])}
 	
 	has_attached_file :photo, :styles => { :small => "100x100#" , :medium => "140x140>", :large => "200x200>"},

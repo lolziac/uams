@@ -1,29 +1,57 @@
 <% @page_title = "Show Product: #{@product.name}" %>
 
 <div class="product show">
-  <h1 class="pagetitle">Product detail view:</h1>
-  <%= link_to("<< Back to List", {:action => 'list'}, :class => 'linkz') %>
- <br /><br /><br />
-	<div class="prod">
-	<div id="prod-content-left">
-		<div class="prod-col-left"><%= image_tag @product.photo.url(:large) %></div>
-	</div>
-	<div id="prod-content-right">
-		<span class="product-title"><%= @product.name %> <%= @product.modelnr %></span><br />
-		<p>Category Name: <%= @product.category_id %><br />
-		Brand: <%= @product.brand %><br />
-		Model Number: <%= @product.modelnr %><br />
-		Serial Number: <%= @product.serialnr %><br />
-		Supplier: <%= @product.supplier_id %><br />
-		Date Purchased: <%= @product.date_purchased %><br />
-		Price: <span class="price">$<%= @product.price %></span><br />
-		Status: <%= @product.status %><br />
-		Last Updated: <%= @product.updated_at %></p><br />
-		Info: <blockquote><%= @product.info %></blockquote>
-		<%= link_to("Edit", {:action => 'edit', :id => @product.id}, :class => 'action edit') %> 
-		<%= link_to("Delete", {:action => 'delete', :id => @product.id}, :class => 'action delete') %>
-	</div>
-		<div class="clear"></div>
-		<p>Ut enim ad minim veniam Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-	</div><!-- end .prod -->  
+    <h2 class="pagetitle">Product detail view:</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+    </div>
+    <br/>
+    <hr />
+    <div id="content-full">
+        <div class="prod">
+            <div id="prod-content-left">
+                <div class="prod-col-left">
+                    <%= image_tag @product.photo.url(:large) %>
+                </div>
+            </div>
+            <div id="prod-content-right">
+                <br />
+                <br />
+                <span class="product-title"><%= @product.name %> <%= @product.modelnr %></span>
+                <br />
+                <p>
+                    Category Name: <%= @product.category_id %>
+                    <br />
+                    Brand: <%= @product.brand %>
+                    <br />
+                    Model Number: <%= @product.modelnr %>
+                    <br />
+                    Serial Number: <%= @product.serialnr %>
+                    <br />
+                    Supplier: <%= @product.supplier_id %>
+                    <br />
+                    Date Purchased: <%= @product.date_purchased %>
+                    <br />
+                    Price: <span class="price">$<%= @product.price %></span>
+                    <br />
+                    Status: <%= @product.status %>
+                    <br />
+                    Last Updated: <%= @product.updated_at %>
+                </p>
+                <br />
+                Info:
+                <blockquote>
+                    <%= @product.info %>
+                </blockquote>
+                <%= link_to(content_tag( :span, "Edit"), {:action => 'edit', :id => @product.id}, :class => 'button') %>
+                <%= link_to(content_tag( :span, "Delete"), {:action => 'delete', :id => @product.id}, :class => 'button') %>
+            </div>
+            <div class="clear">
+            </div>
+            <p>
+                Ut enim ad minim veniam Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            </p>
+        </div><!-- end .prod -->
+    </div>
 </div>

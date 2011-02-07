@@ -1,41 +1,61 @@
 <% @page_title = "Products List" %>
 
 <div class="product list">
-  <h1 class="pagetitle">Products</h1>
-  <%= link_to("Add New Product", {:action => 'new'}, :class => 'action new') %>
-  
-<table id="example" class='datatable' summary="Product list">
-  <thead>
-    <tr class="header">
-	  <th></th>
-      <th>Product</th>
-	  <th>Owner</th>
-	  <th>Serial Nr</th>
-      <th>Status</th>
-	  <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr class="<%= cycle('odd', 'even') %>">	
-		<td class="timg"><img src="<%= product.photo.url(:small) %>"></td>
-		<td class="detail">
-		<p align="left">
-		<%= link_to(product.category.name, {:controller => 'categories', :action => 'show', :id => product.category.id}, :class => 'name') %><br/>
-		<%= product.brand %> <%= product.name %> <%= product.modelnr %><br/>
-		Price: <%= product.price %></p>
-		</td>
-		<td><p>Filan Fisteku</p></td>
-		<td><p><%= product.serialnr %></p></td>
-		<td><p><%= product.status %></p></td>
-		<td class="actions"><p>
-			<%= link_to("Show", {:action => 'show', :id => product.id}, :class => 'action show') %>
-			<%= link_to("Edit", {:action => 'edit', :id => product.id}, :class => 'action edit') %>
-			<%= link_to("Delete", {:action => 'delete', :id => product.id}, :class => 'action delete') %></p>
-		</td>
-      </tr>
-    <%- end -%>
-  </tbody>
-</table>
-  
-</div>
+    <h1 class="pagetitle">Products</h1>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Add New Product"), {:action => 'new'}, :class => 'button') %>
+    </div>
+    <br />
+    <hr />
+    <div>
+
+        <table id="example" class='datatable' summary="Product list">
+            <thead>
+                <tr class="header">
+                    <th></th>
+                    <th>Product</th>
+                    <th>Owner</th>
+                    <th>Serial Nr</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @products.each do |product| %>
+                <tr class="<%= cycle('odd', 'even') %>">
+                    <td class="timg">
+                    <img src="<%= product.photo.url(:small) %>"></td>
+                    <td class="detail">
+                    <p align="left">
+                        <%= link_to(product.category.name, {:controller => 'categories', :action => 'show', :id => product.category.id}, :class => 'name') %>
+                        <br/>
+                        <%= product.brand %> <%= product.name %> <%= product.modelnr %>
+                        <br/>
+                        Price: <%= product.price %>
+                    </p>
+                    </td>
+                    <td>
+                    <p>
+                        Filan Fisteku
+                    </p></td>
+                    <td>
+                    <p>
+                        <%= product.serialnr %>
+                    </p></td>
+                    <td>
+                    <p>
+                        <%= product.status %>
+                    </p></td>
+                    <td class="actions">
+                    <p>
+                        <%= link_to("Show", {:action => 'show', :id => product.id}, :class => 'action show') %>
+                        <%= link_to("Edit", {:action => 'edit', :id => product.id}, :class => 'action edit') %>
+                        <%= link_to("Delete", {:action => 'delete', :id => product.id}, :class => 'action delete') %>
+                    </p>
+                    </td>
+                </tr>
+                <%- end -%>
+            </tbody>
+        </table>
+    </div>

@@ -1,17 +1,37 @@
 <% @page_title = "Edit Category: #{@category.name}" %>
 
-<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
-
 <div class="category edit">
-  <h2>Update Category</h2>
-
-  <%= form_for(:category, :html => { :multipart => true }, :url => {:action => 'update', :id => @category.id}) do |f| %>
-  
-    <%= render(:partial => "form", :locals => {:f => f}) %>
-    
-    <div class="form-buttons">
-      <%= submit_tag("Update Category") %>
+    <h2 class="pagetitle">Update Category</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
     </div>
-    
-  <% end %>
+    <br/>
+    <hr />
+    <div id="content-full">
+    <div id="contsmallleft">
+            <hr/>
+            <div id='conthold' align="center">
+
+                <br/>
+                <h2 ><%= @category.name %></h2>
+                <img  src="<%= @category.photo.url(:small) %>">
+                <hr/>
+            </div>  
+    </div>
+        <div id="contleft">
+          <%= form_for(:category, :html => { :multipart => true }, :url => {:action => 'update', :id => @category.id}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>Use the following form to edit Category.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Update Category" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>

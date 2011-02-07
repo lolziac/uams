@@ -32,7 +32,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: uams_development
+  database: uams_production
   pool: 5
   username: uams
   password: uams

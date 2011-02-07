@@ -1,17 +1,31 @@
 <% @page_title = "Add New Category" %>
 
-<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
-
 <div class="category new">
-  <h2>Create Category</h2>
+    <h1 class="pagetitle">Create Category</h1>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
 
-  <%= form_for(:category, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
-  
-    <%= render(:partial => "form", :locals => {:f => f}) %>
-    
-    <div class="form-buttons">
-      <%= submit_tag("Create Category") %>
     </div>
-    
-  <% end %>
-</div>
+    <br/>
+    <hr />
+    <div id="content-full">
+        <%= form_for(:category, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+        <div id="contleft">
+            <hr/>
+            <div id='conthold'>
+
+                <br/>
+                <h5>Use the following form to add new Category.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Create Category" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+
+        </div>
+    </div>
+

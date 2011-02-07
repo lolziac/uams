@@ -1,17 +1,37 @@
 <% @page_title = "Edit Product: #{@product.name}" %>
 
-<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
-
 <div class="product edit">
-  <h2>Update Product</h2>
-	<%= image_tag @product.photo.url(:small) %>
-  <%= form_for(:product,:html => { :multipart => true }, :url => {:action => 'update', :id => @product.id}) do |f| %>
-  
-    <%= render(:partial => 'form', :locals => {:f => f}) %>
-    
-    <div class="form-buttons">
-      <%= submit_tag("Update Product") %>
+    <h2 class="pagetitle">Update Product</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
     </div>
-    
-  <% end %>
+    <br/>
+    <hr />
+    <div id="content-full">
+    <div id="contsmallleft">
+            <hr/>
+            <div id='conthold' align="center">
+
+                <br/>
+                <h2 ><%= @product.name %></h2>
+                <img  src="<%= @product.photo.url(:small) %>">
+                <hr/>
+            </div>  
+    </div>
+        <div id="contleft">
+          <%= form_for(:product, :html => { :multipart => true }, :url => {:action => 'update', :id => @product.id}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>Use the following form to edit Product: <%= @product.name %> <%= @product.modelnr %>.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Update Product" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>

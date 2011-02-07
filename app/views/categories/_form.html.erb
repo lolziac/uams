@@ -1,24 +1,17 @@
+<hr/>
 <%= error_messages_for(@category) %>
+<%= f.label(:name)  %>
+<%= f.text_field(:name) %>
+<br/>
+<%= f.label(:position)  %>
+<%= f.select(:position, 1..@category_count) %>
+<br/>
+<%= f.label(:visible) %>
+<%= f.check_box(:visible) %>
+<br/><br/>
+<%= f.label(:photo) %>
+<%= f.file_field :photo %>
+<br/>
+<div>
 
-<table summary="Category form fields">
-	  <tr>
-		<th><%= f.label(:photo) %></th>
-		<td><%= f.file_field :photo %></td>
-	  </tr>
-      <tr>
-        <th><%= f.label(:name) %></th>
-        <td><%= f.text_field(:name) %></td>
-      </tr>
-      <tr>
-        <th><%= f.label(:position) %></th>
-        <td><%= f.select(:position, 1..@category_count) %></td>
-      </tr>
-      <tr>
-        <th><%= f.label(:visible) %></th>
-        <td><%= f.check_box(:visible) %></td>
-      </tr>
-	  <tr>
-        <th><%= f.label(:created_at, "Creation Date") %></th>
-        <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
-      </tr>
-</table>
+
