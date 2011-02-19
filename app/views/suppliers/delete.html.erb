@@ -1,0 +1,37 @@
+<% @page_title = "Delete Supplier: #{@supplier.company_name}" %>
+
+<h2 class="pagetitle">Delete Supplier</h2>
+<hr />
+<div class='alignleft'>
+    <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+</div>
+<br/>
+<hr />
+<div id="content-full">
+    <div id="contleft">
+        <%= form_for(:supplier, :url => {:action => 'destroy', :id => @supplier.id}) do |f| %>
+        <hr/>
+        <div id='conthold'>
+           
+            <ul class="prod-type1">
+                <li>
+                    <div class="prod-img-type1" >
+                        <h2><%= @supplier.company_name %></h2>
+                        <a href="#">
+                        <img  src="/assets/companies/comtradelogo.gif"></a>
+                    </div>
+                </li>
+            </ul>
+             <h6>
+                Are you sure you want to permanently delete this supplier?
+            </h6>
+            
+            <p class="reference-name"><%= @supplier.company_name %></p>
+            <div class="tool_btn">
+                <input type="submit" name="submit" class="button" value="Delete Supplier" />
+            </div>
+        <hr/>
+        </div>
+        <% end %>
+    </div>
+</div>
