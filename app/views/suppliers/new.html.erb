@@ -1,0 +1,37 @@
+<% @page_title = 'Create Supplier' %>
+
+<div class="supplier new">
+    <h2 class="pagetitle">Create Supplier</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+    </div>
+    <br/>
+    <hr />
+    <div id="content-full">
+    <div id="contsmallleft">
+            <hr/>
+            <div id='conthold' align="center">
+
+                <br/>
+                <h2 >New Supplier</h2>
+                <img  src="/images/themeimg/default-avatar.png">
+                <hr/>
+            </div>  
+    </div>
+        <div id="contleft">
+          <%= form_for(:supplier, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>Use the following form to add new supplier.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Create Supplier" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

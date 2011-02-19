@@ -5,7 +5,7 @@
 <div class="user list">
     <h1 class="pagetitle">Admin Users</h1>
     <hr />
-    <%= link_to(content_tag( :span, "Add New Admin User"), {:action => 'new'}, :class => 'button') %>
+    <%= link_to(content_tag( :span, "New Admin User"), {:action => 'new'}, :class => 'button') %>
     <h2 class='posttitle'><%= pluralize(@admin_users.size, 'admin user') %> found</h2>
     <hr />
     <br />

@@ -3,7 +3,7 @@
 <div class="category list">
     <h1 class="pagetitle">Categories</h1>
     <hr />
-    <%= link_to(content_tag( :span, "Add New Category"), {:action => 'new'}, :class => 'button') %>
+    <%= link_to(content_tag( :span, "New Category"), {:action => 'new'}, :class => 'button') %>
     <h2 class='posttitle'><%= pluralize(@categories.size, 'category') %> found</h2>
     <hr />
     <br />

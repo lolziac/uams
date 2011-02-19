@@ -1,0 +1,28 @@
+<hr/>
+<%= error_messages_for(@supplier) %>
+
+<%= f.label(:company_name) %>
+<%= f.text_field(:company_name) %>
+<br/>
+<%= f.label(:business_nr) %>
+<%= f.text_field(:business_nr) %>
+<br/>
+<%= f.label(:fiscal_nr) %>
+<%= f.text_field(:fiscal_nr) %>
+<br/>
+<%= f.label(:owner) %>
+<%= f.text_field(:owner) %>
+<br/>
+<%= f.label(:address) %>
+<%= f.text_field(:address) %>
+<br/>
+<%= f.label(:phone) %>
+<%= f.text_field(:phone) %>
+<br/>
+<%= f.label(:status) %>
+<%= f.check_box(:status) %>
+<br/><br/>
+<%= f.label(:services) %>
+<%= f.text_area(:services, :size => '40x10') %><br/>
+<br/>
+<div>

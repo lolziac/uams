@@ -1,0 +1,48 @@
+<% @page_title = "Employees List" %>
+
+<div class="employee list">
+    <h1 class="pagetitle">Employees List</h1>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "New Employee"), {:action => 'new'}, :class => 'button') %>
+    </div>
+    <br />
+    <hr />
+    <div>
+        <section class="grid_6">
+            <div class="block-border">
+                <div class="block-content">
+                    <% @employees.each do |employee| %>
+                    <ul class="extended-list no-margin icon-user">
+                        <li>
+                            <a href="#">
+                            <span class="icon">
+                                <img  src="/images/themeimg/default-avatar.png"  width="46" height="46"></span>
+                            <%= employee.first_name %> <%= employee.last_name %>
+                            <br>
+                            <small>
+                                <%= employee.profession %>
+                            </small>
+                            <br>
+                            <small>
+                                <%= employee.departament %>
+                            </small>
+                            </a>
+                            <br/>
+
+                            <ul class="extended-options">
+                                <li>
+                                    <ul class="mini-menu">
+                                        <%= link_to("Show", {:action => 'show', :id => employee.id}, :class => 'action show') %> | 
+                                        <%= link_to("Edit", {:action => 'edit', :id => employee.id}, :class => 'action edit') %> | 
+                                        <%= link_to("Delete", {:action => 'delete', :id => employee.id}, :class => 'action delete') %>
+
+                                    </ul>
+                            </ul>
+                        </li>
+                        
+                    </ul><% end %>
+                </div>
+            </div>
+        </section>
+    </div>

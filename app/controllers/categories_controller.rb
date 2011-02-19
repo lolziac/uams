@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
     end
 
     def new
-        @category = Category.new(:name => 'default')
+        @category = Category.new
         @category_count = Category.count + 1
     end
 

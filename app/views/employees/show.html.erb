@@ -1,0 +1,86 @@
+<% @page_title = "Show Employee: #{@employee.first_name}" %>
+
+<div class="employee show">
+    <h2 class="pagetitle">Employee detail view:</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+    </div>
+    <br/>
+    <hr />
+
+    <div id="content-full">
+        <div id="contsmallleft">
+            <hr/>
+            <div id='conthold' align="center">
+
+                <br/>
+                <h2 ><%= @employee.first_name %> <%= @employee.last_name %></h2>
+                <img  src="/images/themeimg/default-avatar.png">
+
+                <hr/>
+            </div>
+        </div>
+        <div id="contleft">
+            <hr/>
+            <div id='conthold'>
+
+                <table border="0">
+                    <tr>
+                        <td><b>Name:</b></td>
+                        <td><%= @employee.first_name %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Lastname:</b></td>
+                        <td><%= @employee.last_name %></td>
+                    </tr>
+                    <tr>
+                        <td><b>University Number:</b></td>
+                        <td><%= @employee.uni_nr %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Employed date:</b></td>
+                        <td><%= @employee.date_employed %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Profession:</b></td>
+                        <td><%= @employee.profession %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Departament:</b></td>
+                        <td><%= @employee.departament %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Office:</b></td>
+                        <td><%= @employee.office %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Email:</b></td>
+                        <td><%= @employee.email %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Phone:</b></td>
+                        <td><%= @employee.phone %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Status:</b></td>
+                        <td><%= @employee.status %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Created:</b></td>
+                        <td><%= @employee.created_at %></td>
+                    </tr>
+                    <tr>
+                        <td><b>Updated:</b></td>
+                        <td><%= @employee.updated_at %></td>
+                    </tr>
+                </table>
+                <hr/>
+            </div>
+            <hr/>
+            <%= link_to(content_tag( :span, "Edit"), {:action => 'edit', :id => @employee.id}, :class => 'button') %>
+            <%= link_to(content_tag( :span, "Delete"), {:action => 'delete', :id => @employee.id}, :class => 'button') %>
+        </div>
+        <div class="clear">
+        </div>
+    </div>

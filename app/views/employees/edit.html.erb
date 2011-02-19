@@ -1,0 +1,37 @@
+<% @page_title = "Edit Employee: #{@employee.first_name}" %>
+
+<div class="employee edit">
+    <h2 class="pagetitle">Edit Employee</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+    </div>
+    <br/>
+    <hr />
+    <div id="content-full">
+    <div id="contsmallleft">
+            <hr/>
+            <div id='conthold' align="center">
+
+                <br/>
+                <h2 ><%= @employee.first_name %> <%= @employee.last_name %></h2>
+                <img  src="http://wiseheartdesign.com/page_attachments/0000/0062/default-avatar.png">
+                <hr/>
+            </div>  
+    </div>
+        <div id="contleft">
+          <%= form_for(:employee, :html => { :multipart => true }, :url => {:action => 'update', :id => @employee.id}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>Use the following form to edit Employee.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Update Employee" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

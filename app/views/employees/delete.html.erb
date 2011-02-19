@@ -1,6 +1,6 @@
-<% @page_title = "Delete Admin User: #{@admin_user.name}" %>
+<% @page_title = "Delete Employee: #{@employee.first_name}" %>
 
-<h2 class="pagetitle">Delete Admin User</h2>
+<h2 class="pagetitle">Delete Employee</h2>
 <hr />
 <div class='alignleft'>
     <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
@@ -9,28 +9,27 @@
 <hr />
 <div id="content-full">
     <div id="contleft">
-        <%= form_for(:admin_user, :url => {:action => 'destroy', :id => @admin_user.id}) do |f| %>
+        <%= form_for(:employee, :url => {:action => 'destroy', :id => @employee.id}) do |f| %>
         <hr/>
         <div id='conthold'>
            
             <ul class="categ-type1">
                 <li>
                     <div class="categ-img-type1" >
-                        <h2><%= @admin_user.name %></h2>
+                        <h2><%= @employee.first_name %> <%= @employee.last_name %></h2>
                         <a href="#">
                          <img  src="/images/themeimg/default-avatar.png"  width="86" height="86"></a>
                     </div>
                 </li>
             </ul>
              <h6>
-                Are you sure you want to permanently delete this admin user?
+                Are you sure you want to permanently delete this employee?
             </h6>
             <div class="tool_btn">
-                <input type="submit" name="submit" class="button" value="Delete Admin User" />
+                <input type="submit" name="submit" class="button" value="Delete Employee" />
             </div>
         <hr/>
         </div>
         <% end %>
     </div>
 </div>
-

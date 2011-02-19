@@ -257,8 +257,6 @@ form input.submit {
 
 /* text styled and button */
 
-
-
 .clear { /* generic container (i.e. div) for floating buttons */
     overflow: hidden;
     width: 100%;
@@ -799,6 +797,10 @@ td.timg {
     width: 100px;
     height: 100px;
 }
+td.simg {
+    width: 100px;
+    height: 100px;
+}
 tr.odd td {
     background: #f9f9f9;
 }
@@ -967,4 +969,118 @@ hr {
     border:#d0d0d0 1px solid;
     background:#ebebeb;
     margin:-5px 0 15px;
+}
+
+/*************** Extended infos list ************/
+.extended-list > li {
+  border-top: 1px dotted #afafaf;
+  padding: 1.667em;
+  position: relative;
+  z-index: 89;
+  border-bottom: 1px solid #E6E6E6;
+  }
+  .extended-list > li:hover {
+    background-color: #F6F6F6;
+    }
+  .extended-list > li:first-child {
+    border-top: 0;
+  }
+  /* IE class */
+  .extended-list > li.first-child {
+    border-top: 0;
+  }
+  .extended-list > li > a,
+  .extended-list > li > span {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Sans", Arial, Helvetica, sans-serif;
+    display: block;
+    float: left;
+    padding-left: 54px;
+    white-space: nowrap;
+    min-height: 48px;
+    position: relative;
+    }
+    body.dark .extended-list > li > a,
+    body.dark .extended-list > li > span {
+      color: white;
+    }
+    body.dark .block-content .extended-list > li > a,
+    body.dark .block-content .extended-list > li > span {
+      color: #39c;
+    }
+    .extended-list > li > a:hover,
+    body.dark .extended-list > li > a:hover,
+    body.dark .extended-list > li > span:hover,
+    body.dark .block-content .extended-list > li > a:hover,
+    body.dark .block-content .extended-list > li > span:hover {
+      color: #33CCFF;
+    }
+  .extended-list > li > a small {
+    font-size: 0.667em;
+    font-weight: normal;
+    text-transform: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    vertical-align: 20%;
+    }
+    body.dark .extended-list > li > a small {
+      color: #b0b0b0;
+    }
+    body.dark .block-content .extended-list > li > a small {
+      color: #808080;
+    }
+  .extended-list > li > a .icon {
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  
+  .extended-list .extended-options {
+    float: right;
+    }
+    .extended-list .extended-options li {
+      float: left;
+      margin-left: 1.5em;
+      line-height: 1.75em;
+      }
+      body.dark .extended-list .extended-options li {
+        color: white;
+      }
+      body.dark .block-content .extended-list .extended-options li {
+        color: #333;
+      }
+      .extended-list .extended-options li:first-child {
+        margin-left: 0;
+      }
+      /* IE class */
+      .extended-list .extended-options li.first-child {
+        margin-left: 0;
+      }
+
+/* Employee List Block Container */
+
+.extended-list li:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+
+* html .extended-list li {
+  height: 1%;
+}
+
+
+.extended-list li {
+  display: block;
 }

@@ -1,8 +1,8 @@
 class Product < ActiveRecord::Base
 
     belongs_to :category
-    has_many :cargo
     belongs_to :supplier
+    has_many :cargo
     has_and_belongs_to_many :editors, :class_name => "AdminUser"
 
     has_attached_file :photo, :styles => { :small => "120x120#" , :medium => "200x200>", :large => "400x400>"},

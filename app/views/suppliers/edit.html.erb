@@ -1,0 +1,37 @@
+<% @page_title = "Edit Supplier: #{@supplier.company_name}" %> 
+
+<div class="supplier edit">
+    <h2 class="pagetitle">Edit Supplier</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+    </div>
+    <br/>
+    <hr />
+    <div id="content-full">
+    <div id="contsmallleft">
+            <hr/>
+            <div id='conthold' align="center">
+
+                <br/>
+                <h2 ><%= @supplier.company_name %></h2>
+                 <img  src="/assets/companies/comtradelogo.gif">
+                <hr/>
+            </div>  
+    </div>
+        <div id="contleft">
+          <%= form_for(:supplier, :html => { :multipart => true }, :url => {:action => 'update', :id => @supplier.id}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>Use the following form to edit Supplier.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Update Supplier" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

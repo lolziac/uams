@@ -1,0 +1,53 @@
+<% @page_title = "Show Supplier: #{@supplier.company_name}" %>
+
+<div class="supplier show">
+    <h2 class="pagetitle">Supplier detail view:</h2>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "Back to List"), {:action => 'list'}, :class => 'button') %>
+    </div>
+    <br/>
+    <hr />
+    <div id="content-full">
+        <div class="prod">
+            <div id="prod-content-left">
+                <div class="prod-col-left">
+                     <img  src="/assets/companies/comtradelogo.gif">
+                </div>
+            </div>
+            <div id="prod-content-right">
+                <br />
+                <br />
+                <span class="product-title"><%= @supplier.company_name %></span>
+                <br />
+                <p>
+                    Bussiness Nr: <%= @supplier.business_nr %>
+                    <br />
+                    Fiscal Nr: <%= @supplier.fiscal_nr %>
+                    <br />
+                    Owner: <%= @supplier.owner %>
+                    <br />
+                    Address: <%= @supplier.address %>
+                    <br />
+                    Phone: <%= @supplier.phone %>
+                    <br />
+                    Status: <%= @supplier.status %>
+                    <br />
+                    Last Updated: <%= @supplier.updated_at %>
+                </p>
+                <br />
+                Services:
+                <blockquote>
+                    <%= @supplier.services %>
+                </blockquote>
+                <%= link_to(content_tag( :span, "Edit"), {:action => 'edit', :id => @supplier.id}, :class => 'button') %>
+                <%= link_to(content_tag( :span, "Delete"), {:action => 'delete', :id => @supplier.id}, :class => 'button') %>
+            </div>
+            <div class="clear">
+            </div>
+            <p>
+                Ut enim ad minim veniam Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            </p>
+        </div><!-- end .prod -->
+    </div>
+</div>

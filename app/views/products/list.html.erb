@@ -4,7 +4,7 @@
     <h1 class="pagetitle">Products</h1>
     <hr />
     <div class='alignleft'>
-        <%= link_to(content_tag( :span, "Add New Product"), {:action => 'new'}, :class => 'button') %>
+        <%= link_to(content_tag( :span, "New Product"), {:action => 'new'}, :class => 'button') %>
     </div>
     <br />
     <hr />
@@ -55,7 +55,7 @@
                     </p>
                     </td>
                 </tr>
-                <%- end -%>
+                <% end %>
             </tbody>
         </table>
     </div>

@@ -1,0 +1,51 @@
+<% @page_title = "Suppliers List" %>
+
+<div class="supplier list">
+    <h1 class="pagetitle">Suppliers List</h1>
+    <hr />
+    <div class='alignleft'>
+        <%= link_to(content_tag( :span, "New Supplier"), {:action => 'new'}, :class => 'button') %>
+    </div>
+    <br />
+    <hr />
+
+    <table id="example" class='datatable' summary="Supplier list">
+        <thead>
+            <tr class="header">
+                <th></th>
+                <th>Supplier</th>
+                <th>Owner</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @suppliers.each do |supplier| %>
+            <tr class="<%= cycle('odd', 'even') %>">
+                <td class="simg">
+                <img  src="/assets/companies/comtradelogo.gif"></td>
+                <td class="detail">
+                <p align="left">
+                    <%= link_to(supplier.company_name, {:controller => 'suppliers', :action => 'show', :id => supplier.id}, :class => 'name') %>
+                </p>
+                </td>
+                <td>
+                <p>
+                    <%= supplier.owner %>
+                </p></td>
+                <td>
+                <p>
+                    <%= supplier.address %>
+                </p></td>
+                <td class="actions">
+                <p>
+                    <%= link_to("Show", {:action => 'show', :id => supplier.id}, :class => 'action show') %>
+                    <%= link_to("Edit", {:action => 'edit', :id => supplier.id}, :class => 'action edit') %>
+                    <%= link_to("Delete", {:action => 'delete', :id => supplier.id}, :class => 'action delete') %>
+                </p>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
