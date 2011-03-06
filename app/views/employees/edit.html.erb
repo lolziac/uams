@@ -15,7 +15,7 @@
 
                 <br/>
                 <h2 ><%= @employee.first_name %> <%= @employee.last_name %></h2>
-                <img  src="http://wiseheartdesign.com/page_attachments/0000/0062/default-avatar.png">
+                <img src="<%= @employee.photo.url(:large) %>">
                 <hr/>
             </div>  
     </div>

@@ -23,7 +23,7 @@
             <% @suppliers.each do |supplier| %>
             <tr class="<%= cycle('odd', 'even') %>">
                 <td class="simg">
-                <img  src="/assets/companies/comtradelogo.gif"></td>
+                <img src="<%= supplier.photo.url(:medium) %>"></td>
                 <td class="detail">
                 <p align="left">
                     <%= link_to(supplier.company_name, {:controller => 'suppliers', :action => 'show', :id => supplier.id}, :class => 'name') %>

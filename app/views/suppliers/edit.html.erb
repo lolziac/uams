@@ -15,7 +15,7 @@
 
                 <br/>
                 <h2 ><%= @supplier.company_name %></h2>
-                 <img  src="/assets/companies/comtradelogo.gif">
+                 <%= image_tag @supplier.photo.url(:small) %>
                 <hr/>
             </div>  
     </div>

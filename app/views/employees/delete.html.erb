@@ -12,23 +12,22 @@
         <%= form_for(:employee, :url => {:action => 'destroy', :id => @employee.id}) do |f| %>
         <hr/>
         <div id='conthold'>
-           
-            <ul class="categ-type1">
+
+            <ul class="employ-type1">
                 <li>
-                    <div class="categ-img-type1" >
+                    <div class="employ-img-type1" >
                         <h2><%= @employee.first_name %> <%= @employee.last_name %></h2>
-                        <a href="#">
-                         <img  src="/images/themeimg/default-avatar.png"  width="86" height="86"></a>
+                        <img src="<%= @employee.photo.url(:medium) %>">
                     </div>
                 </li>
             </ul>
-             <h6>
-                Are you sure you want to permanently delete this employee?
+            <h6>
+            Are you sure you want to permanently delete this employee?
             </h6>
             <div class="tool_btn">
                 <input type="submit" name="submit" class="button" value="Delete Employee" />
             </div>
-        <hr/>
+            <hr/>
         </div>
         <% end %>
     </div>

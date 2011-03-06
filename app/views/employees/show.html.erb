@@ -16,7 +16,7 @@
 
                 <br/>
                 <h2 ><%= @employee.first_name %> <%= @employee.last_name %></h2>
-                <img  src="/images/themeimg/default-avatar.png">
+                <img src="<%= @employee.photo.url(:large) %>">
 
                 <hr/>
             </div>
