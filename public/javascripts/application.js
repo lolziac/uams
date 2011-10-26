@@ -4,3 +4,7 @@
 function jsRoar(){
 	alert('I am JavaScript. Hear me roar!');
 	}
+	
+$('#open-dialog').click(function(){
+    $your_dialog.dialog('open');
+});

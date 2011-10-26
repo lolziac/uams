@@ -490,11 +490,26 @@ a.button:active span {
 
 #contleft .tool_btn{margin-top:0px; margin-left:112px;}
 
+#contform{width:600px; float:left; padding:10px;}
+* html #contleft{padding:10px;}
+
+#contform .tool_btn{margin-top:0px; margin-left:112px;}
+
+
 #contsmallright{width:20%; float:left; }
 
 #contright{width:49%; float:right; }
 
 #contleft .tool_btn .button {
+    background-color:#4a5a64;
+    color: #EFEFEF;
+    font: normal 11px Verdana, arial, sans-serif;
+    height: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+
+#contform .tool_btn .button {
     background-color:#4a5a64;
     color: #EFEFEF;
     font: normal 11px Verdana, arial, sans-serif;

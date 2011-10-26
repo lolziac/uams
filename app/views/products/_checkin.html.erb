@@ -1,0 +1,11 @@
+<hr/>
+<%= error_messages_for(@product) %>
+
+<%= f.label(:employee) %>
+<%= f.select(:employee_id, Employee.all.collect {|s| [s.first_name + ' ' +  s.last_name, s.id]}) %><br/> 
+
+<%= f.label(:date_in, "Date Check In") %>
+<%= f.date_select(:date_in, :order => [:month, :day, :year]) %><br/><br/>
+
+<%= f.label(:info) %>
+<%= f.text_area(:info, :size => '40x10', :value => "") %><br/><br/>

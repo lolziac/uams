@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110305180945) do
+ActiveRecord::Schema.define(:version => 20110520220100) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -104,6 +104,9 @@ ActiveRecord::Schema.define(:version => 20110305180945) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "employee_id"
+    t.date     "date_in"
+    t.date     "date_out"
   end
 
   add_index "products", ["category_id"], :name => "index_products_on_category_id"
@@ -128,6 +131,21 @@ ActiveRecord::Schema.define(:version => 20110305180945) do
   end
 
   add_index "suppliers", ["product_id"], :name => "index_suppliers_on_product_id"
+
+  create_table "tracks", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "employee_id"
+    t.date     "date_out"
+    t.date     "date_in"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "info_in"
+    t.text     "info_out"
+  end
+
+  add_index "tracks", ["employee_id"], :name => "index_tracks_on_employee_id"
+  add_index "tracks", ["product_id"], :name => "index_tracks_on_product_id"
 
   create_table "workers", :force => true do |t|
     t.string   "first_name",    :limit => 25

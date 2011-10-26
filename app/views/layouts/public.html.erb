@@ -5,13 +5,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>University Asset Management System | <%= @page_title || 'Public Area' %></title>
         <meta name="author" content="Labinot Halilaj">
-        <%= stylesheet_link_tag('style', 'demo_table_jui', 'TableTools', :media => 'all') %>
-        <%= javascript_include_tag :defaults, 'jquery.dataTables.js', 'TableTools.js' %>
+         <%= stylesheet_link_tag('style', 'demo_table_jui', 'ui-lightness/jquery-ui-1.8.11.custom.css', 'TableTools', :media => 'all') %> 
+        <%= javascript_include_tag :defaults, 'jquery-ui-1.8.11.custom.min.js', 'jquery.dataTables.js', 'screen.js', 'TableTools.js', 'ZeroClipboard.js' %> 
         <script type="text/javascript" charset="utf-8">
             $(document).ready( function() {
                 $('#example').dataTable({});
             } );
         </script>
+        <script>
+          $(document).ready(function() {
+            var $your_dialog = $('#your_dialog').dialog({ 
+              autoOpen: false, 
+              title: 'Edit',
+              modal: true,
+              draggable: false
+            });
+          });
+         </script>
     </head>
     <body>
         <div id="wrapper">

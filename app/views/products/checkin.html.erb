@@ -1,0 +1,21 @@
+<% @page_title = "Check In Asset: #{@product.name}"%>
+
+<div class="product checkin">
+
+        <div id="contform">
+          <%= form_for(:product, :html => { :multipart => true }, :url => {:action => 'assign', :id => @product.id}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>The following asset will be assigned to:</h5>
+                </p>
+                
+                <%= render(:partial => "checkin", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Check In" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+        </div>
+</div>

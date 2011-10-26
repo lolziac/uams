@@ -1,0 +1,14 @@
+<div id="your_dialog">
+          <%= form_for(:category, :html => { :multipart => true }, :url => {:action => 'update', :id => @category.id}) do |f| %>
+            <hr/>
+            <div id='conthold'>
+                <br/>
+                <h5>Use the following form to edit Category.</h5>
+                <%= render(:partial => "form", :locals => {:f => f}) %>
+                <div class="tool_btn">
+                    <input type="submit" name="submit" class="button" value="Update Category" />
+                </div>
+                <hr/>
+            </div>
+            <% end %>
+</div>

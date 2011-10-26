@@ -42,6 +42,11 @@ class CategoriesController < ApplicationController
         @category_count = Category.count
     end
 
+  def dial
+        @category = Category.find(params[:id])
+        @category_count = Category.count
+    end
+    
     def update
         # Find object using form parameters
         @category = Category.find(params[:id])

@@ -1,0 +1,8 @@
+<hr/>
+<%= error_messages_for(@product) %>
+
+<%= f.label(:date_out, "Date Check Out") %>
+<%= f.date_select(:date_out, :order => [:month, :day, :year]) %><br/><br/>
+
+<%= f.label(:info) %>
+<%= f.text_area(:info, :size => '40x10', :value => "") %><br/><br/>

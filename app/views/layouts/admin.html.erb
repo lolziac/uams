@@ -5,13 +5,29 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>University Asset Management System | <%= @page_title || 'Admin Area' %></title>
         <meta name="author" content="Labinot Halilaj">
-        <%= stylesheet_link_tag('style', 'demo_table_jui', 'TableTools', :media => 'all') %>
-        <%= javascript_include_tag :defaults, 'jquery.dataTables.js', 'TableTools.js', 'ZeroClipboard.js' %>
+        <%= stylesheet_link_tag('style', 'formtastic', 'formtastic_changes', 'colorbox.css', 'demo_table_jui', 'jquery.fancybox-1.3.4.css', 'demos.css', 'TableTools', :media => 'all') %> 
+        <%= javascript_include_tag :defaults, 'jquery.colorbox-min.js', 'jquery.fancybox-1.3.4.js', 'jquery.dataTables.js', 'screen.js', 'TableTools.js', 'ZeroClipboard.js' %> 
+        <%= csrf_meta_tag %>
         <script type="text/javascript" charset="utf-8">
             $(document).ready( function() {
                 $('#example').dataTable({});
             } );
         </script>
+
+    <script>
+    $(document).ready(function(){
+      //Examples of how to assign the ColorBox event to elements
+      $(".cboxdialog").colorbox({speed:350});
+
+      
+      //Example of preserving a JavaScript event for inline calls.
+      $("#click").click(function(){ 
+        $('#click')
+        return false;
+      });
+    });
+  </script>
+
     </head>
     <body>
         <div id="wrapper">
@@ -39,9 +55,6 @@
                             <%= link_to("Employees", :controller => 'employees') %>
                         </li>
                         <li>
-                            <%= link_to("Cargo", :controller => 'cargo') %>
-                        </li>
-                        <li>
                             <%= link_to("Admin Users", :controller => 'admin_users') %>
                         </li>
                         <li>
@@ -49,16 +62,18 @@
                         </li>
                     </ul>
                 </div>
+                
                 <% if !flash[:notice].blank? %>
                 <div class="notice">
                     <%= flash[:notice] %>
                 </div>
                 <% end %>
+                
                 <div id="content">
                     <%= yield %>
-                    <div class="clear">
-                    </div>
+                    <div class="clear"></div>
                 </div><!-- end #content --><br/>
+                
                 <div id="footer">
                     <div id="footer-text">
                         <p id="copyright">
@@ -66,6 +81,7 @@
                         </p>
                     </div><!-- end #footer-text -->
                 </div><!-- end #footer -->
+                
             </div><!-- end #container -->
         </div>
     </body>

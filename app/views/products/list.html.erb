@@ -49,9 +49,16 @@
                     </p></td>
                     <td class="actions">
                     <p>
+                        <% if product.status == "Available" %>
+                        <%= link_to("Check In", {:action => 'checkin', :id => product.id}, :title => 'Check In: ' + product.brand + ' ' + product.name + ' ' + product.modelnr , :class => 'cboxdialog') %>
+                        <% else %>
+                        <%= link_to("Check Out", {:action => 'checkout', :id => product.id}, :title => 'Check Out: ' + product.brand + ' ' + product.name + ' ' + product.modelnr , :class => 'cboxdialog') %>
+                        <% end %>
+                        <br/>
                         <%= link_to("Show", {:action => 'show', :id => product.id}, :class => 'action show') %>
                         <%= link_to("Edit", {:action => 'edit', :id => product.id}, :class => 'action edit') %>
                         <%= link_to("Delete", {:action => 'delete', :id => product.id}, :class => 'action delete') %>
+
                     </p>
                     </td>
                 </tr>

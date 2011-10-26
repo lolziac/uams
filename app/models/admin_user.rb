@@ -8,7 +8,6 @@ class AdminUser < ActiveRecord::Base
     has_and_belongs_to_many :cargos
     has_and_belongs_to_many :categories
     has_and_belongs_to_many :suppliers
-    has_and_belongs_to_many :workers
     has_many :cargo_edits
     has_many :cargos, :through => :cargo_edits
 

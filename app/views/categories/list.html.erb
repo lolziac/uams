@@ -1,12 +1,12 @@
 <% @page_title = "Categories List" %>
-
 <div class="category list">
     <h1 class="pagetitle">Categories</h1>
     <hr />
     <%= link_to(content_tag( :span, "New Category"), {:action => 'new'}, :class => 'button') %>
     <h2 class='posttitle'><%= pluralize(@categories.size, 'category') %> found</h2>
     <hr />
-    <br />
+    <br />    
+    
     <div>
         <% @categories.each do |category| %>
         <ul class="categ-type1">
@@ -25,4 +25,5 @@
         </ul>
         <% end %>
     </div>
+
 </div>
