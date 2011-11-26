@@ -1,3 +1,21 @@
+== Abstract == 
+
+This thesis discusses the design and implementation of web application for tracking
+university assets, using Open Source Software to reassurance further development and
+maintenance. Bearing in mind consistency, usability and accessibility the development
+work is conducted using OOSE (Object-Oriented Software Engineering) software design
+with Rational Unified Process (RUP) life-cycle methodology. Additionally, using object
+oriented approach web application is developed with Ruby on Rails web framework,
+MySQL for database and nginx for web server. Furthermore, Ruby on Rails implements
+Model-View-Controller design pattern which is an architectural style that helps on defining
+data model with business rules from user interface. 
+
+In general, the developed asset tracking
+web application is a system that is based on modern technologies and will improve
+accuracy of the information, efficiency and productivity of staff, and also will enhance the
+consistency of data.
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
