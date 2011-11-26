@@ -5,12 +5,9 @@ class AdminUser < ActiveRecord::Base
     # set_table_name("admin_users")
 
     has_and_belongs_to_many :products
-    has_and_belongs_to_many :cargos
     has_and_belongs_to_many :categories
     has_and_belongs_to_many :suppliers
-    has_many :cargo_edits
-    has_many :cargos, :through => :cargo_edits
-
+    
     attr_accessor :password
     EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     # Standard method of validations
