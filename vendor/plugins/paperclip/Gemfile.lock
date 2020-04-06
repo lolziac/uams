@@ -1,9 +1,10 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    appraisal (0.1)
+    appraisal (2.2.0)
       bundler
       rake
+      thor (>= 0.14.0)
     aws-s3 (0.6.2)
       builder
       mime-types
@@ -12,9 +13,8 @@ GEM
     columnize (0.3.2)
     linecache (0.43)
     mime-types (1.16)
-    mocha (0.9.9)
-      rake
-    rake (0.8.7)
+    mocha (1.11.2)
+    rake (13.0.1)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.4.0)
@@ -22,16 +22,20 @@ GEM
       linecache (>= 0.3)
     shoulda (2.11.3)
     sqlite3-ruby (1.3.2)
+    thor (1.0.1)
     xml-simple (1.0.12)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  appraisal
+  appraisal (>= 0.5.2)
   aws-s3
-  mocha
-  rake
+  mocha (>= 0.9.9)
+  rake (>= 12.3.3)
   ruby-debug
   shoulda
   sqlite3-ruby (~> 1.3.0)
+
+BUNDLED WITH
+   1.17.3
