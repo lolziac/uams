@@ -6,7 +6,7 @@ gem 'rails', '5.2.4.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '>= 0.2.12'
-gem 'jquery-rails', '>= 4.3.5'
+gem 'jquery-rails', '>= 4.4.0'
 # Use unicorn as the web server
 # gem 'unicorn'
 
